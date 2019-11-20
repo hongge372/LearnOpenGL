@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.github.piasy.openglestutorial_android.stu.MyRunder;
+
 public class MainActivity extends AppCompatActivity {
 
     private GLSurfaceView mGLSurfaceView;
-    private DemoRenderer mRenderer;
+    private GLSurfaceView.Renderer mRenderer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         mGLSurfaceView = (GLSurfaceView) findViewById(R.id.surface);
 
         mGLSurfaceView.setEGLContextClientVersion(2);
-        mRenderer = new DemoRenderer(this);
         mGLSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
+        //mRenderer = new DemoRenderer(this);
+        //mGLSurfaceView.setRenderer(mRenderer);
+        mRenderer = new MyRunder();
         mGLSurfaceView.setRenderer(mRenderer);
         mGLSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
     }
