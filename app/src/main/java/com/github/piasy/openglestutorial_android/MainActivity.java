@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.github.piasy.openglestutorial_android.stu.ErduoRunderer;
 import com.github.piasy.openglestutorial_android.stu.MyRunder;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mGLSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
         //mRenderer = new DemoRenderer(this);
         //mGLSurfaceView.setRenderer(mRenderer);
-        mRenderer = new MyRunder();
+        mRenderer = new ErduoRunderer(this);
         mGLSurfaceView.setRenderer(mRenderer);
         mGLSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
     }
