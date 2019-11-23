@@ -12,20 +12,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.github.piasy.openglestutorial_android.mytexturev.MyTextviewActivity;
 import com.github.piasy.openglestutorial_android.stu.ErduoRunderer;
 import com.github.piasy.openglestutorial_android.stu.MyGLRenderer;
 import com.github.piasy.openglestutorial_android.stu.MyRunder;
 import com.github.piasy.openglestutorial_android.stu.StuPlaneActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    private GLSurfaceView mGLSurfaceView;
-    private GLSurfaceView.Renderer mRenderer;
+    private final String TAG = getClass().getName();
     private static int REQUEST_PERMISSION_CODE = 1;
     private static String[] PERMISSIONS_BE_CHECK = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_SETTINGS};
+            Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+    int buttonSize = 2;
+    Button button[] = new Button[buttonSize];
+    private GLSurfaceView mGLSurfaceView;
+    private GLSurfaceView.Renderer mRenderer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initMyAct() {
-        Button button = (Button) findViewById(R.id.run_stu_glv);
-        button.setOnClickListener(listener);
+        button[0] = (Button) findViewById(R.id.run_stu_glv);
+        button[0].setOnClickListener(listener);
+        button[1] = (Button) findViewById(R.id.run_stu_texturev);
+        button[1].setOnClickListener(listener);
     }
 
     View.OnClickListener listener = new View.OnClickListener() {
@@ -50,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
                     intent.setClass(MainActivity.this, StuPlaneActivity.class);
                     startActivity(intent);
                     break;
+                case R.id.run_stu_texturev:
+                    intent.setClass(MainActivity.this, MyTextviewActivity.class);
+                    startActivity(intent);
                 default:
                     break;
             }

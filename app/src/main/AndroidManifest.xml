@@ -4,7 +4,7 @@
 
     <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
             android:allowBackup="true"
@@ -14,6 +14,7 @@
             android:theme="@style/AppTheme">
         <activity android:name=".stu.StuPlaneActivity"/>
         <activity android:name=".stu.GLActivity" />
+        <activity android:name=".mytexturev.MyTextviewActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

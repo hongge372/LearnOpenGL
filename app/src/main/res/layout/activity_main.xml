@@ -12,6 +12,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/run_stu_glv"/>
+            android:id="@+id/run_stu_glv"
+            android:text="glsurafaceview渲染bitmap"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/run_stu_texturev"
+            android:text="texture渲染bitmap"/>
     </LinearLayout>
 </FrameLayout>
